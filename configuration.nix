@@ -97,7 +97,6 @@
   tealdeer
   xclip
   bat
-  neofetch
   flatpak
   steam
   discord
@@ -126,6 +125,7 @@
   wl-clipboard
   slurp
   stow
+  fastfetch
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
