@@ -127,6 +127,14 @@
   stow
   fastfetch
   cava
+  mako
+  gnome-keyring
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-gnome
+  fuzzel
+  kdePackages.polkit-kde-agent-1
+  xwayland-satellite
+  alacritty
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
@@ -144,17 +152,16 @@
 
   };
 
-   
+   programs.niri.enable = true;
   # List services that you want to enable:
   services.flatpak.enable = true;
   
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true; # or false
-  };
+  services.xserver.videoDrivers = [
+  "nvidia" ];
    
+  hardware.nvidia = {
+  open = false;
+  };
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
 
