@@ -36,8 +36,8 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -81,7 +81,7 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -100,7 +100,6 @@
   flatpak
   steam
   discord
-  brave
   nil
   networkmanagerapplet
   fish
@@ -134,7 +133,6 @@
   fuzzel
   kdePackages.polkit-kde-agent-1
   xwayland-satellite
-  alacritty
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
