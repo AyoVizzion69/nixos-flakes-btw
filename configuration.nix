@@ -104,7 +104,6 @@
   networkmanagerapplet
   fish
   nautilus
-  foot
   i3
   dmenu
   sway
