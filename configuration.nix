@@ -132,6 +132,9 @@
   fuzzel
   kdePackages.polkit-kde-agent-1
   xwayland-satellite
+  thunderbird
+  brave
+  obsidian
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
