@@ -142,6 +142,8 @@
   waypaper
   swaybg
   emacs
+  python311Full
+  python311Packages.pip
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
