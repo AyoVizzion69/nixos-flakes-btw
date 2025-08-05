@@ -145,6 +145,7 @@
   python311Full
   python311Packages.pip
   arandr
+  meson
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
