@@ -137,6 +137,11 @@
   obsidian
   waybar
   unzip
+  firefox
+  pavucontrol
+  waypaper
+  swaybg
+  emacs
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
