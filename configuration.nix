@@ -73,7 +73,7 @@
     isNormalUser = true;
     description = "vizzion";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "bluetooth" ];
-    openssh.authorizedKeys.keys = ["AAAAC3NzaC1lZDI1NTE5AAAAID5gxQFgg4ieFvUXFvLJd4k1l1jNhYcXgW4hfdv+kSUs"];
+    openssh.authorizedKeys.keys = [""];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -178,3 +178,4 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
+
