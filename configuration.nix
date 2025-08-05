@@ -109,7 +109,7 @@
   sway
   rofi
   helix
-  swaybg
+  swww
   swayfx
   cmatrix
   flameshot
@@ -135,6 +135,8 @@
   thunderbird
   brave
   obsidian
+  waybar
+  unzip
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
@@ -153,6 +155,8 @@
   };
 
    programs.niri.enable = true;
+
+   programs.xwayland.enable = true;
   # List services that you want to enable:
   services.flatpak.enable = true;
 
