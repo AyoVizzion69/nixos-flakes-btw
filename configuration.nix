@@ -155,13 +155,11 @@
    programs.niri.enable = true;
   # List services that you want to enable:
   services.flatpak.enable = true;
-  
-  services.xserver.videoDrivers = [
-  "nvidia" ];
-   
-  hardware.nvidia = {
-  open = false;
-  };
+
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
+
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
 
