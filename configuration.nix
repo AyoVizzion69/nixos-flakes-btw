@@ -150,6 +150,12 @@
   clang
   cmake
   ninja
+  kitty
+  nwg-look
+  hyprland
+  waybar
+  wofi
+  geteltorito
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
