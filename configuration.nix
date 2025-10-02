@@ -33,11 +33,27 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+#  services.xserver = {
+#  enable = true;
+#  windowManager.qtile.enable = true;
+#  displayManager.sessionCommands = ''
+#    xwallpaper --zoom ~/walls/wallpaper.jpg
+#    xset r rate 200 35 &
+#   '';
+#  };
 
+
+  # Hyprland
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = false;
+    xwayland.enable = true;
+  };
+     
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services.displayManager.ly.enable = true;
+  services.desktopManager.gnome.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -45,7 +61,10 @@
     variant = "";
   };
 
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+ }; 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -91,8 +110,11 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  vim
-  ghostty
+  mypy
+  ly
+  picom
+  neovim
+  alacritty 
   git
   tealdeer
   xclip
@@ -104,22 +126,16 @@
   networkmanagerapplet
   fish
   nautilus
-  i3
   dmenu
-  sway
   rofi
-  helix
   swww
-  swayfx
+  xwallpaper
   cmatrix
   flameshot
   htop
   tty-clock
   gnumake
   cbonsai
-  asciiquarium
-  asciiquarium-transparent
-  i3status
   wl-clipboard
   slurp
   stow
@@ -137,10 +153,7 @@
   obsidian
   waybar
   unzip
-  firefox
   pavucontrol
-  waypaper
-  swaybg
   emacs
   python311Full
   python311Packages.pip
@@ -155,7 +168,6 @@
   hyprland
   waybar
   wofi
-  geteltorito
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
@@ -165,24 +177,18 @@
      enable = true;
      enableSSHSupport = true;
    };
-   programs.sway = {
- 
-   enable = true;
-  
-   package = pkgs.swayfx;
 
-  };
-
-   programs.niri.enable = true;
-
-   programs.xwayland.enable = true;
   # List services that you want to enable:
   services.flatpak.enable = true;
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
+  
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
 
+    ];
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
 
