@@ -6,8 +6,17 @@
       /etc/nixos/hardware-configuration.nix
     ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+  efi = {
+    canTouchEfiVariables = true;
+    efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
+  };
+  grub = {
+     efiSupport = true;
+     #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+     device = "nodev";
+  };
+};
 
   networking.hostName = "nixos-flakes-btw";
   networking.networkmanager.enable = true;
@@ -99,7 +108,13 @@
     #  thunderbird
     ];
   };
-
+  
+  home-manager = {
+  extraSpecialArgs = { inherit inputs; };
+  users = {
+  "vizzion" = import ./home.nix;
+  };
+};
   # Install firefox.
   programs.firefox.enable = false;
 
@@ -156,7 +171,6 @@
   unzip
   pavucontrol
   emacs
-  python311Full
   python311Packages.pip
   arandr
   meson
@@ -169,6 +183,7 @@
   hyprland
   waybar
   wofi
+  sl
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
